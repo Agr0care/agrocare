@@ -1,0 +1,62 @@
+\documentclass[spanish, 12pt, letterpaper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,left=3.0cm,right=3.0cm,top=2.5cm,bottom=2.5cm]{geometry}
+\usepackage{graphicx}
+\usepackage[spanish]{babel}
+\usepackage[natbibapa]{apacite}
+\usepackage{setspace} \onehalfspacing
+\usepackage{fontspec}
+\usepackage{listings}
+\setmainfont{Arial}
+
+\title {
+{\Large \textbf{UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO}}\\
+{\large ESCUELA NACIONAL PREPARATORIA}\\
+\vspace{2cm}
+{\Large Desarrollo y evaluación de un robot para el cuidado de plantas mediante sensores y redes neuronales recurrentes: Agrocare}\\
+\vspace{1cm}
+{\large \textbf{Viña Almeida, Ulises}}\\
+{\large \textbf{R.G.K.E.}}\\
+\vspace{1cm}
+{\normalsize TRABAJO DE INVESTIGACIÓN PARA LA SEXTA COMPETENCIA DE ROBÓTICA DE LA ESCUELA NACIONAL PREPARATORIA}\\
+\vspace{2cm}
+{\normalsize PROFESORA GUÍA: Milagros Pacheco Castañeda}\\
+{\normalsize PROFESOR CO-REFERENTE: Alejandro Nava Álvarez}\\
+\vspace{2cm}
+{\normalsize FEBRERO 2023}
+}
+
+\author{}
+\date{}
+
+\renewcommand{\refname}{Bibliografía}
+\renewcommand{\contentsname}{Tabla de Contenidos}
+
+\begin{document}
+
+\maketitle
+\setcounter{secnumdepth}{0}
+\thispagestyle{empty}
+
+\tableofcontents
+
+\newpage
+
+\include{definicion}
+
+\include{objetivo}
+
+\include{marco}
+
+\include{prototipo}
+
+\include{resultados}
+
+\include{conclusiones}
+
+\bibliographystyle{apacite}
+\bibliography{bibliografia}
+
+\include{glosario}
+
+\end{document}

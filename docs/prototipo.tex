@@ -1,0 +1,23 @@
+\section{Descripción y Funcionamiento del Prototipo}
+\subsection{Descripción}
+El prototipo de Agrocare está construido con materiales reciclados y equipado con un sistema de cómputo y sensores para monitorear el estado del invernadero. Es un recipiente rectangular de 26x17.4cm (452.4 cm²) que tiene una sección para la planta (~75\% del recipiente) y otra para el agua de riego (~25\% del recipiente).\\
+
+Se utilizan tres tipos de sensores para el monitoreo: el Sensor DHT-11, el Sensor de humedad de suelo capacitivo y la Fotorresistencia. El Sensor DHT-11 mide la temperatura y la humedad del aire, el Sensor de humedad de suelo capacitivo mide la humedad del suelo y la Fotorresistencia mide la intensidad de la luz solar.\\
+
+Se eligió la placa de desarrollo basada en el microcontrolador ESP32, en específico la T-Display de TTGO, debido a su potencia y conectividad Wi-Fi y Bluetooth. Además, esta placa incluye una pantalla LCD de 1.14 pulgadas para mostrar información en tiempo real al usuario final. Se utilizó una batería reciclada de un teléfono Motorola con una capacidad de 2,810 mAh a 3.7V (10.36Wh), alimentada por una celda fotovoltáica de 700 mAh a 17V (11.9Wh), esta última ayuda a que el proyecto sea autosustentable energéticamente.
+
+\subsection{Código}
+Para la implementación de la API y el Socket:
+\lstset{language=JavaScript}
+\begin{lstlisting}[language=JavaScript]
+// Previo a esta linea deben importarse las dependencias.
+require("dotenv").config();
+app.use(cors(),express.json(),express.urlencoded({extended:false}));
+app.use("/v1/auth", auth);
+app.use("/v1/data", data);
+io.attach(server,{pingInterval:10000,pingTimeout:5000,cookie:false});
+io.use(socketAuth);
+app.listen(port,()=>{console.log(Listening on port ${port})});
+\end{lstlisting}
+\vspace{0.3cm}
+\noindent{El código para los microservicios, microcontrolador, el resto de implementaciones de la API y la app móvil está disponible en la siguiente liga: \href{https://github.com/Agr0care/agrocare}{https://github.com/Agr0care/agrocare}}
