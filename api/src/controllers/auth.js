@@ -44,7 +44,7 @@ const login = (username, password) => {
         resolve({ error: "Invalid username or password", status: 401 });
       }
 
-      const token = jwt.sign({ username: user.username }, secretKey, {
+      const token = jwt.sign({ username: user.username, id: user.id }, secretKey, {
         expiresIn: "1y",
       });
 
